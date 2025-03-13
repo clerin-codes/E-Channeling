@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+         
+  <display-name>e-channeling</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  
+    <servlet>
+    	<servlet-name>addDoc</servlet-name>
+    	<servlet-class>com.doctor.AddDoctorServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>addDoc</servlet-name>
+    	<url-pattern>/adddoctor</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>addmedicine</servlet-name>
+    	<servlet-class>com.medicine.AddMedicineServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>addmedicine</servlet-name>
+    	<url-pattern>/addmedicine</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>addlab</servlet-name>
+    	<servlet-class>com.lab.AddLabServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>addlab</servlet-name>
+    	<url-pattern>/addlab</url-pattern>
+    </servlet-mapping>
+	
+    <servlet>
+    	<servlet-name>patientRegister</servlet-name>
+    	<servlet-class>com.patient.PatientRegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>patientRegister</servlet-name>
+    	<url-pattern>/preg</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+    	<servlet-name>patientLogin</servlet-name>
+    	<servlet-class>com.patient.PatientLoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>patientLogin</servlet-name>
+    	<url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+    	<servlet-name>addAppoinment</servlet-name>
+    	<servlet-class>com.channel.ChanneServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>addAppoinment</servlet-name>
+    	<url-pattern>/addAppoinment</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>viewAppoinment</servlet-name>
+    	<servlet-class>com.channel.ViewChanneServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>viewAppoinment</servlet-name>
+    	<url-pattern>/viewAppoinment</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+    	<servlet-name>updateAppoinment</servlet-name>
+    	<servlet-class>com.channel.UpdateChanneServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>updateAppoinment</servlet-name>
+    	<url-pattern>/channelUpdate</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+    	<servlet-name>deleteAppoinment</servlet-name>
+    	<servlet-class>com.channel.DeleteAppoinmentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>deleteAppoinment</servlet-name>
+    	<url-pattern>/deleteAppoinment</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>addLabTest</servlet-name>
+    	<servlet-class>com.labTests.AddLabTestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>addLabTest</servlet-name>
+    	<url-pattern>/addLabTest</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>deleteLabTest</servlet-name>
+    	<servlet-class>com.labTests.DeleteLabTestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>deleteLabTest</servlet-name>
+    	<url-pattern>/deleteLabTest</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+    	<servlet-name>labTestUpdate</servlet-name>
+    	<servlet-class>com.labTests.labTestUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>labTestUpdate</servlet-name>
+    	<url-pattern>/labTUpdate</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>addorder</servlet-name>
+    	<servlet-class>com.order.AddOrderServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>addorder</servlet-name>
+    	<url-pattern>/addorder</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+    	<servlet-name>orderUpdate</servlet-name>
+    	<servlet-class>com.order.orderUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>orderUpdate</servlet-name>
+    	<url-pattern>/orderUpdate</url-pattern>
+    </servlet-mapping>
+
+  	<servlet>
+    	<servlet-name>orderDelete</servlet-name>
+    	<servlet-class>com.order.orderDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>orderDelete</servlet-name>
+    	<url-pattern>/orderDelete</url-pattern>
+    </servlet-mapping>
+
+<servlet>
+    <servlet-name>addPayment</servlet-name>
+    <servlet-class>com.payment.AddPaymentServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>addPayment</servlet-name>
+    <url-pattern>/addPayment</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>deletePayment</servlet-name>
+    <servlet-class>com.payment.DeletePaymentServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>deletePayment</servlet-name>
+    <url-pattern>/deletePayment</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+    <servlet-name>updatePayment</servlet-name>
+    <servlet-class>com.payment.UpdatePaymentServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>updatePayment</servlet-name>
+    <url-pattern>/updatePayment</url-pattern>
+</servlet-mapping>
+  
+  
+</web-app>
