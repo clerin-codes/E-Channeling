@@ -1,0 +1,65 @@
+CREATE TABLE `echanneling`.`doctor` (
+  `iddoctor` INT NOT NULL AUTO_INCREMENT,
+  `dname` VARCHAR(45) NOT NULL,
+  `type` VARCHAR(45) NOT NULL,
+  `area` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`iddoctor`)
+);
+
+CREATE TABLE `echanneling`.`medicine` (
+  `idmedicine` INT NOT NULL AUTO_INCREMENT,
+  `mname` VARCHAR(45) NOT NULL,
+  `price` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idmedicine`)
+);
+
+
+
+CREATE TABLE `echanneling`.`patient` (
+  `idpatient` INT NOT NULL AUTO_INCREMENT,
+  `pname` VARCHAR(45) NOT NULL,
+  `username` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idpatient`)
+);
+
+
+CREATE TABLE `echanneling`.`channel` (
+  `idchannel` INT NOT NULL AUTO_INCREMENT,
+  `iddoctor` INT NOT NULL,
+  `idpatient` INT NOT NULL,
+  `date` DATE NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`idchannel`),
+  INDEX `fkpatient_idx` (`idpatient` ASC),
+  INDEX `fkdoctor_idx` (`iddoctor` ASC),
+  CONSTRAINT `fkpatient`
+    FOREIGN KEY (`idpatient`)
+    REFERENCES `echanneling`.`patient` (`idpatient`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fkdoctor`
+    FOREIGN KEY (`iddoctor`)
+    REFERENCES `echanneling`.`doctor` (`iddoctor`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+);
+
+ALTER TABLE `echanneling`.`channel` 
+ADD COLUMN `age` INT NOT NULL AFTER `name`,
+ADD COLUMN `channelcol` VARCHAR(45) NULL AFTER `age`;
+
+CREATE TABLE `echanneling`.`payment` (
+  `idpayment` INT NOT NULL AUTO_INCREMENT,
+  `date` VARCHAR(45) NOT NULL,
+  `amount` DOUBLE NOT NULL,
+  `payment_method` VARCHAR(45) NOT NULL,
+  `phone` VARCHAR(45) NOT NULL,
+  `idpatient` INT NOT NULL,  
+  PRIMARY KEY (`idpayment`),
+  CONSTRAINT `fk_patient`
+    FOREIGN KEY (`idpatient`)
+    REFERENCES `echanneling`.`patient` (`idpatient`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION
+);
